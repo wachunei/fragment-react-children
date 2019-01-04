@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import styled, { injectGlobal } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Introduction from "./Introduction";
 import Example from "./Example";
 
-injectGlobal`
+const GlobalStyles = createGlobalStyle`
   body {
     background-color: #ffe0f2;
     color: #555;
@@ -27,6 +27,7 @@ class App extends Component {
   render() {
     return (
       <Page>
+        <GlobalStyles />
         <Introduction />
         <Example show="one" />
         <Example show="multiple" />
